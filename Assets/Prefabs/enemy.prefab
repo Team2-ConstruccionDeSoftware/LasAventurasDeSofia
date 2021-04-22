@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5440750333464416256}
   - component: {fileID: 5440750333464416258}
   m_Layer: 0
-  m_Name: enemy
+  m_Name: Enemy
   m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -146,9 +146,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.06580499, y: -0.020166516}
+  m_Offset: {x: 0.0836826, y: -0.020166516}
   serializedVersion: 2
-  m_Radius: 0.13120194
+  m_Radius: 0.14903453
 --- !u!114 &5440750333464416256
 MonoBehaviour:
   m_ObjectHideFlags: 0

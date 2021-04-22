@@ -9,7 +9,7 @@ public class score : MonoBehaviour
     // Start is called before the first frame update
     public Text myScoreText;
     public int scoreNum;
-    
+    livesManager lives;
     void Start()
     {
         scoreNum = 1000;
@@ -18,6 +18,7 @@ public class score : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D colliderPlayer)
     {
+        lives = GameObject.FindGameObjectWithTag("Sofia").GetComponent<livesManager>();
         if(colliderPlayer.tag == "coin"){
             if(scoreNum == 1000){
                 myScoreText.text += "\n You win: Perfect!";
@@ -34,24 +35,28 @@ public class score : MonoBehaviour
         }
         //Como hacer para que no cuentele puntuacion cunado vuelvas a caer
         if(colliderPlayer.tag == "correcto"){
+            SoundManagerScript.playSound("correct");
             scoreNum += 150;
             myScoreText.text = "Score: " + scoreNum;
             colliderPlayer.enabled = false;
         }
-        if(colliderPlayer.tag == "incorrecto" && scoreNum>0){
+        if(colliderPlayer.tag == "incorrecto"){
+            SoundManagerScript.playSound("incorrect");
             scoreNum -= 200;
             myScoreText.text = "Score: " + scoreNum;
+            lives.substLive();
             colliderPlayer.enabled = false;
         }
         if(colliderPlayer.tag == "lose"){
-            myScoreText.text += "\n You lose";
+            //myScoreText.text += "\n GAME OVER";
             Debug.Log("Detected");
-            Time.timeScale = 0;  
+            //Time.timeScale = 0;  
         }
-        /*if(colliderPlayer.tag == "enemy"){
+        if(colliderPlayer.tag == "enemy"){
             scoreNum -= 100;
             myScoreText.text = "Score: " + scoreNum;
-        }*/
+            SoundManagerScript.playSound("hit");
+        }
     }
 
     /*void Update(){

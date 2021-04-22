@@ -34,10 +34,6 @@ public class assingData : MonoBehaviour
         //Randomizar lista
         shuffle(order);
         
-        foreach(int number in order){
-            Debug.Log("'"+ csvData[number] + "'");
-        }
-        
         //Asignar valores, los valores para las respuestas son 2,4,6
         sprites[2].sprite = Resources.Load<Sprite>(csvData[order[0]]);
         sprites[4].sprite = Resources.Load<Sprite>(csvData[order[1]]);
