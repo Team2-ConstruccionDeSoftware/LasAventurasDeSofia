@@ -19,7 +19,7 @@ public class enemyCollider : MonoBehaviour
         {
             var sr = GetComponent<SpriteRenderer>();
             sr.sprite = dead;
-            Invoke("activate", 1);
+            Invoke("activate", 0.5f);
         }
     }
     void activate(){

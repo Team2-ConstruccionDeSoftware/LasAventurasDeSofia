@@ -8,6 +8,7 @@ public class livesManager : MonoBehaviour
     public Vector2 SpawnPoint;
     public GameObject[] hearts;
     public Animator animator;
+    public GameObject gameOver;
     void OnTriggerEnter2D (Collider2D col)
     {
         if(Lives>1){
@@ -26,6 +27,8 @@ public class livesManager : MonoBehaviour
     }
     void endGame(){
         Time.timeScale = 0;
+        Debug.Log("Va a cambiar de escena");
+        gameOver.GetComponent<levelSelector>().ButtonMoveScene("Game over");
     }
     //Perder vidas
     void Update(){
@@ -34,7 +37,7 @@ public class livesManager : MonoBehaviour
             //gameObject.transform.position = SpawnPoint;
             SoundManagerScript.playSound("lose");
             animator.SetBool("dies", true);
-            Invoke("endGame", 2);
+            Invoke("endGame", 4);
             //Sacar escena de game over con opcion de restart
         } else if(Lives < 2){ //1
             Destroy(hearts[1].gameObject);
