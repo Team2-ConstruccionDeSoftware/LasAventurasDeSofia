@@ -253,7 +253,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myScoreText: {fileID: 1872884370}
-  toWhichScene: Lvl_2
   gameManager: {fileID: 1798431477}
 --- !u!1 &18748452 stripped
 GameObject:
@@ -1075,6 +1074,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b948f87a2e677d4f92e3942a1d04688, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Lives: 3
   SpawnPoint: {x: 0, y: 0}
   hearts:
   - {fileID: 274041613}
@@ -1141,7 +1141,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.208
+  m_Volume: 0.06
   m_Pitch: 1
   Loop: 0
   Mute: 0
