@@ -32,7 +32,7 @@ public class livesManager : MonoBehaviour
         Lives--;
     }
     void endGame(){
-        Time.timeScale = 0;
+        //Time.timeScale = 0;
         gameOver.GetComponent<levelSelector>().ButtonMoveScene("Game over");
     }
     //Perder vidas
