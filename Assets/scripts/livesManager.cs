@@ -9,15 +9,21 @@ public class livesManager : MonoBehaviour
     public GameObject[] hearts;
     public Animator animator;
     public GameObject gameOver;
+    [SerializeField] float respawnX;
+    [SerializeField] float respawnYUp;
+    [SerializeField] float respawnYDown;
     void OnTriggerEnter2D (Collider2D col)
     {
         if(Lives>1){
-            SpawnPoint = new Vector2(-20.32f, -5.61f);
+            //SpawnPoint = new Vector2(-20.32f, -5.61f);
+            SpawnPoint = new Vector2(respawnX, respawnYUp);
         }
         else{
-            SpawnPoint = new Vector2(-20.32f, -8.19f);
+            SpawnPoint = new Vector2(respawnX, respawnYDown);
+            //SpawnPoint = new Vector2(-20.32f, -8.19f);
         }
         if (col.transform.tag == "lose"){
+            Debug.Log("detecto el lose collider");
             Lives--;
             gameObject.transform.position = SpawnPoint;
         }
@@ -27,7 +33,6 @@ public class livesManager : MonoBehaviour
     }
     void endGame(){
         Time.timeScale = 0;
-        Debug.Log("Va a cambiar de escena");
         gameOver.GetComponent<levelSelector>().ButtonMoveScene("Game over");
     }
     //Perder vidas
