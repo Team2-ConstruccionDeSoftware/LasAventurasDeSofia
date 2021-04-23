@@ -64,6 +64,11 @@ public class score : MonoBehaviour
             myScoreText.text = "Score: " + scoreNum;
             colliderPlayer.enabled = false;
         }
+        if (colliderPlayer.tag == "Bullet"){
+            scoreNum -= 100;
+            myScoreText.text = "Score: " + scoreNum;
+            lives.substLive();
+        }
     }
 
     /*void Update(){
