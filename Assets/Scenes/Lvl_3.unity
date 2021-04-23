@@ -837,7 +837,7 @@ GameObject:
   - component: {fileID: 347850885}
   m_Layer: 0
   m_Name: Death_bottom (3)
-  m_TagString: Tiles
+  m_TagString: lose
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
