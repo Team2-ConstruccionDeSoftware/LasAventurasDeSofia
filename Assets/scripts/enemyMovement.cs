@@ -26,7 +26,6 @@ public class enemyMovement : MonoBehaviour
     void FixedUpdate()
     {
         //cambia
-        Debug.Log("entro al update" + move);
         transform.Translate(move*Time.fixedDeltaTime);
         if(transform.position.x < initialPosition)
         {

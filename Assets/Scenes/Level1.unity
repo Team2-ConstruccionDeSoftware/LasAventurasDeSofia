@@ -253,6 +253,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myScoreText: {fileID: 1872884370}
+  toWhichScene: Lvl_2
+  gameOver: {fileID: 1798431477}
 --- !u!1 &18748452 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6945583947704965665, guid: 06a88061db086b0418fc4ade4966097a,

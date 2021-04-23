@@ -39,6 +39,11 @@ public class score : MonoBehaviour
             scoreNum += 150;
             myScoreText.text = "Score: " + scoreNum;
             colliderPlayer.enabled = false;
+            //gameObject.GetComponent<enemyCollider>().delayDeactivate();
+            GameObject enemy = GameObject.Find("enemy");
+            Debug.Log(enemy);
+            /*enemyCollider other = (enemyCollider) enemy.GetComponent(typeof(enemyCollider));
+            other.delayDeactivate();*/
         }
         if(colliderPlayer.tag == "incorrecto"){
             SoundManagerScript.playSound("incorrect");
@@ -49,13 +54,15 @@ public class score : MonoBehaviour
         }
         if(colliderPlayer.tag == "lose"){
             //myScoreText.text += "\n GAME OVER";
-            Debug.Log("Detected");
+            //Debug.Log("Detected");
             //Time.timeScale = 0;  
         }
         if(colliderPlayer.tag == "enemy"){
+            Debug.Log("detecto el collider con enemigo");
+            SoundManagerScript.playSound("hit");
             scoreNum -= 100;
             myScoreText.text = "Score: " + scoreNum;
-            SoundManagerScript.playSound("hit");
+            colliderPlayer.enabled = false;
         }
     }
 
