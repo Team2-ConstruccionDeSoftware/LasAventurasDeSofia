@@ -11,6 +11,9 @@ TagManager:
   - coin
   - enemy
   - lose
+  - Tiles
+  - MovingPlat
+  - Bullet
   layers:
   - Default
   - TransparentFX
