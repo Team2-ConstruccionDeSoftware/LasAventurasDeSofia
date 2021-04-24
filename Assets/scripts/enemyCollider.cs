@@ -27,6 +27,12 @@ public class enemyCollider : MonoBehaviour
         pregunta.SetActive(true);
         qMarkSr.enabled = false;
     }
+    public void delayDeactivate(){
+        Invoke("deactivate", 1f);
+    }
+    void deactivate(){
+        pregunta.SetActive(false);
+    }
     void Update(){
         if(pregunta == null){
             pregunta = qMark.transform.GetChild(0).gameObject;

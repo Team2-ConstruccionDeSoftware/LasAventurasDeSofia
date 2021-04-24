@@ -200,7 +200,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 80479220}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -21.1, y: 6.17, z: -10}
+  m_LocalPosition: {x: -22.18, y: 6.46, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -694,7 +694,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.71
+  m_Volume: 0.07
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -839,12 +839,12 @@ PrefabInstance:
     - target: {fileID: 6738294166948761521, guid: 21478834cfe4d924abc2374972fe0894,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -21.1
+      value: -22.18
       objectReference: {fileID: 0}
     - target: {fileID: 6738294166948761521, guid: 21478834cfe4d924abc2374972fe0894,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.17
+      value: 6.46
       objectReference: {fileID: 0}
     - target: {fileID: 6738294166948761521, guid: 21478834cfe4d924abc2374972fe0894,
         type: 3}
@@ -1018,7 +1018,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 874871224}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -21.1, y: 6.17, z: -10}
+  m_LocalPosition: {x: -22.18, y: 6.46, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1993056445}
@@ -1182,6 +1182,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myScoreText: {fileID: 0}
+  gameManager: {fileID: 953674954}
 --- !u!58 &1004427916
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2696,6 +2697,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b948f87a2e677d4f92e3942a1d04688, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Lives: 3
   SpawnPoint: {x: 0, y: 0}
   hearts:
   - {fileID: 663243120}

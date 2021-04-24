@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class livesManager : MonoBehaviour
 {
-    public static int Lives = 3;
+    public int Lives = 3;
     public Vector2 SpawnPoint;
     public GameObject[] hearts;
     public Animator animator;
@@ -32,7 +32,7 @@ public class livesManager : MonoBehaviour
         Lives--;
     }
     void endGame(){
-        Time.timeScale = 0;
+        //Time.timeScale = 0;
         gameOver.GetComponent<levelSelector>().ButtonMoveScene("Game over");
     }
     //Perder vidas
