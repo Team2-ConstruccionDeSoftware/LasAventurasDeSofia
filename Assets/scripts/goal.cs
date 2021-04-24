@@ -16,7 +16,7 @@ public class goal : MonoBehaviour
         {
             //Destroy(coin.gameObject);
             //Stop simulation
-            Time.timeScale = 0;
+            //Time.timeScale = 0;
             gameObject.SetActive(false);  
             gameManager.GetComponent<levelSelector>().ButtonMoveScene("win");
         }
