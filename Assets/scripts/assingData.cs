@@ -28,6 +28,8 @@ public class assingData : MonoBehaviour
 
         sprites[0].sprite = Resources.Load<Sprite>(csvData[0]);
 
+        //Debug.Log(sprites[0].sprite);
+
         //Lista con los sprites de getComponentsInChildren
         int[] order = {3,4,5}; //relacionar con los botones
 

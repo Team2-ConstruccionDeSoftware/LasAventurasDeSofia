@@ -2,20 +2,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
-
 public class score : MonoBehaviour
 {
     // Start is called before the first frame update
     public Text myScoreText;
     public int scoreNum;
+    public int questionId;
+    public GameObject preguntaId;
     livesManager lives;
+    public int correctIncorrect;
+    public GameObject api;
+    public string path;
     void Start()
     {
         scoreNum = 1000;
         myScoreText.text = "Score: " + scoreNum;
     }
-
+    public int getcorrectIncorrect(){
+        return correctIncorrect;
+    }
+    public int getQuestionId(){
+        return questionId;
+    }
     void OnTriggerEnter2D(Collider2D colliderPlayer)
     {
         lives = GameObject.FindGameObjectWithTag("Sofia").GetComponent<livesManager>();
@@ -39,11 +47,20 @@ public class score : MonoBehaviour
             scoreNum += 150;
             myScoreText.text = "Score: " + scoreNum;
             colliderPlayer.enabled = false;
-            //gameObject.GetComponent<enemyCollider>().delayDeactivate();
-            GameObject enemy = GameObject.Find("enemy");
-            Debug.Log(enemy);
-            /*enemyCollider other = (enemyCollider) enemy.GetComponent(typeof(enemyCollider));
-            other.delayDeactivate();*/
+            correctIncorrect = 1;
+            //Guardar el path para identificar el player id en el readcsv
+            GameObject boton  = colliderPlayer.gameObject;
+            GameObject pregunta = boton.transform.parent.gameObject;
+            var spriteR = pregunta.GetComponent<SpriteRenderer>();
+            Debug.Log("AQUI ES " + spriteR.sprite.name);
+            var path = "Assets/Q&A/" + spriteR.sprite.name;
+            Debug.Log("funciona el path?");
+            Debug.Log(path);
+            questionId = preguntaId.GetComponent<readcsv>()
+                                      .getIdPregunta(path);
+            Debug.Log(questionId);
+            //Start coroutine
+            StartCoroutine(api.GetComponent<wwwFormGameData>().uploadData());
         }
         if(colliderPlayer.tag == "incorrecto"){
             SoundManagerScript.playSound("incorrect");
@@ -51,14 +68,23 @@ public class score : MonoBehaviour
             myScoreText.text = "Score: " + scoreNum;
             lives.substLive();
             colliderPlayer.enabled = false;
+            correctIncorrect = 0;
+            //Guardar el path para identificar el player id en el readcsv
+            GameObject boton  = colliderPlayer.gameObject;
+            GameObject pregunta = boton.transform.parent.gameObject;
+            var spriteR = pregunta.GetComponent<SpriteRenderer>();
+            Debug.Log("AQUI ES " + spriteR.sprite.name);
+            string path = "Assets/Q&A/" + spriteR.sprite.name;
+            Debug.Log("funciona el path?");
+            Debug.Log(path);
+            questionId = preguntaId.GetComponent<readcsv>()
+                                      .getIdPregunta(path);
+            Debug.Log(questionId);
+            //Start coroutine
+            StartCoroutine(api.GetComponent<wwwFormGameData>().uploadData());
         }
-        if(colliderPlayer.tag == "lose"){
-            //myScoreText.text += "\n GAME OVER";
-            //Debug.Log("Detected");
-            //Time.timeScale = 0;  
-        }
+       
         if(colliderPlayer.tag == "enemy"){
-            Debug.Log("detecto el collider con enemigo");
             SoundManagerScript.playSound("hit");
             scoreNum -= 100;
             myScoreText.text = "Score: " + scoreNum;
@@ -70,6 +96,7 @@ public class score : MonoBehaviour
             lives.substLive();
         }
     }
+
 
     /*void Update(){
         if(scoreNum > 0){

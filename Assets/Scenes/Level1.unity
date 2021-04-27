@@ -705,6 +705,52 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 169288390}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &345495336
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 345495338}
+  - component: {fileID: 345495337}
+  m_Layer: 0
+  m_Name: api
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &345495337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 345495336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 433c3ec0568fa274e960bf74ea1193e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  apiURL: http://localhost:5000/gamedata
+  score: {fileID: 575497582}
+  playerId: Billy@mail.com
+--- !u!4 &345495338
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 345495336}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -29.056858, y: 15.208059, z: -30.238005}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 18
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &387627740
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1099,6 +1145,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myScoreText: {fileID: 1872884370}
   scoreNum: 0
+  questionId: 0
+  preguntaId: {fileID: 1342341203}
+  correctIncorrect: 0
+  api: {fileID: 345495336}
+  path: 
 --- !u!1 &1016690677
 GameObject:
   m_ObjectHideFlags: 0
@@ -1437,6 +1488,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelData: {fileID: 4900000, guid: 686f48c71bbd69c45989ea89bdcca135, type: 3}
+  dataLines: []
+  line: 0
+  level: 1
 --- !u!1 &1426295872
 GameObject:
   m_ObjectHideFlags: 0
