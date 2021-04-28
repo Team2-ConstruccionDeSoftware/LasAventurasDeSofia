@@ -21,13 +21,17 @@ public class readcsv : MonoBehaviour
     public void Awake()
     {
         dataLines = levelData.text.Split('\n'); 
-        for(int i = 0; i < dataLines.Length; i++){
+        if(level == "1"){
+            for(int i = 0; i < dataLines.Length; i++){
             before.Add(dataLines[i], i+2);
-            //Debug.Log(dataLines[i]);
-            //Debug.Log(i+2);
+        }
+        }
+        else{
+            for(int i = 0; i < dataLines.Length; i++){
+            before.Add(dataLines[i], i+1);
+            }
         }
         shuffle(dataLines);
-        //Debug.Log(dataLines.Length);
     }
     public string getLine(int choseRow){
         for(int row = 0; row < dataLines.Length; row++)
@@ -36,6 +40,7 @@ public class readcsv : MonoBehaviour
                 if(before.ContainsKey(dataLines[row])){
                     used.Add(row);
                     int second = before[dataLines[row]];
+                    Debug.Log("second"+second);
                     string lineStr = level + Convert.ToString(second);
                     line = Convert.ToInt32(lineStr);
                     var csvData = dataLines[row].Trim('\r', '\n').Split(','); 
