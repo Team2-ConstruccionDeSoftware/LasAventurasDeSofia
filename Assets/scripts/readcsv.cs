@@ -16,7 +16,7 @@ public class readcsv : MonoBehaviour
     public Dictionary<string, int> preguntas = new Dictionary<string, int>();
     public Dictionary<string, int> before = new Dictionary<string, int>();
     public int line;
-    public string level = "1";
+    [SerializeField] public string level = "1";
 
     public void Awake()
     {
